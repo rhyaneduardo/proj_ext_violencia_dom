@@ -1,0 +1,101 @@
+body{
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+header{
+  background:#111;
+  padding:15px 40px;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+strong {
+  color: #C0392B;
+}
+
+section{
+  min-height:100vh;
+  padding:40px;
+}
+
+a{
+  color: #C0392B;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.logo{
+  color:white;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:20px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#C0392B;
+}
+
+
+.img-violencia-dom{
+  display: flex;
+  justify-content: center;
+}
+
+.img-lei-maria-da-penha{
+  display: flex;
+  justify-content: center;
+}
+
+.img-proj-borboleta{
+  display: flex;
+  justify-content: center;
+  
+}
+
+.img-inst-mariadapenha{
+  display: flex;
+  justify-content: center;
+  
+}
+
+.img-rio-em-redes{
+  display: flex;
+  justify-content: center;
+  
+}
