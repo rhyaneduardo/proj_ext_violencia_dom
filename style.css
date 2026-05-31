@@ -1,148 +1,201 @@
-body{
-  margin: auto;
-  font-family: 'Poppins', sans-serif;
-  background-color: #1a1a1ad8;
-  color: rgb(252, 251, 251);
+@charset "UTF-8";
+
+html {
+  scroll-behavior: smooth;
 }
 
-header{
-  background:#111;
-  padding:15px 40px;
-  position:sticky;
-  top:0;
-  z-index:1000;
-
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E RESETS (Responsivo com suas cores)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Impede que paddings quebrem a tela no celular */
 }
 
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #1a1a1ad8; /* Seu fundo escuro original */
+    color: rgb(252, 251, 251);  /* Seus textos claros originais */
+}
+
+/* REGRA DE OURO PARA IMAGENS RESPONSIVAS */
+img {
+    max-width: 100%; /* A imagem nunca fica maior que a tela do dispositivo */
+    height: auto;    /* Mantém a proporção sem amassar a foto */
+    display: block;
+    margin: 0 auto;  /* Centraliza as fotos automaticamente */
 }
 
 strong {
-  color: #C0392B;
+    color: #cf4330; /* Seu vermelho original para destaques */
 }
 
-a{
-  color: #f7361c;
+a {
+    color: #cf4330; /* Seus links originais em vermelho vibrante */
 }
 
+/* ==========================================================================
+   2. TOPO E MENU (HEADER & NAVIGATION)
+   ========================================================================== */
+header {
+    background: #111; /* Seu fundo escuro do menu */
+    padding: 15px 20px; /* Padding ideal para não vazar em telas pequenas */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    flex-direction: column; /* No celular, o título fica em cima e os links embaixo */
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.logo {
+    color: rgb(250, 249, 249); /* Sua cor de logo original */
+}
+
+/* Ajuste de fontes adaptáveis para celular primeiro */
 h1 {
-  font-size: 50px;
-  font-weight: 600;
+    font-size: 28px;
+    font-weight: 600;
 }
 
 h2 {
-  font-size: 40px;
-  margin-bottom: 10px;
-  text-align: center;
+    font-size: 26px;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 h3 {
-  text-align: center;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 15px;
 }
 
+/* CORRIGIDO: Agora o tamanho padrão (celular) é 16px */
 p {
-  font-size: 20px;
-  line-height: 1.6;
-  text-align: center;
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-align: center; /* Seus textos centralizados originais */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Se os links não couberem na mesma linha no celular, eles quebram */
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #C0392B; /* Seu efeito hover vermelho */
+}
+
+/* ==========================================================================
+   3. CONTEÚDO PRINCIPAL E SEÇÕES (Seu estilo cinza com sombra marcante)
+   ========================================================================== */
+main {
+    max-width: 1000px; /* Evita que o conteúdo estique demais em monitores gigantes */
+    margin: 0 auto;
+    padding: 15px;     /* Margem de segurança nas laterais para telas de celular */
+}
+
+section {
+    background-color: #505050; /* Seu fundo cinza original das seções */
+    margin: 30px 0;           /* Espaçamento seguro entre as caixas no celular */
+    padding: 30px;            /* Seu preenchimento interno original */
+    border-radius: 10px;       /* Suas bordas arredondadas originais */
+    box-shadow: 10px 10px 10px #111; /* Sua sombra marcante original */
+    scroll-margin-top: 160px;
+}
+
+/* Configuração para as listas internas (Tipos de violência e Contatos) */
+ul, ol {
+    list-style-position: inside; /* Mantém as bolinhas/números alinhados com o texto centralizado */
+    margin-bottom: 15px;
+    padding: 0;
 }
 
 li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
-  text-align: center;
-  font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 12px;
 }
 
-section#principal{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #505050;
-  margin: 100px;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 10px 10px 10px #111;
-}
-
-section#lei {
-  background-color: #505050;
-  border: 50px;
-  margin: 200px;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 10px 10px 10px #111;
-}
-
-section > p {
-  text-align: center;
-}
-
-section#contato { 
-  background-color: #505050;
-  border: 50px;
-  margin: 200px;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 10px 10px 10px #111;
+/* Estilização e alinhamento dos blocos que envolvem suas imagens */
+.img-principal, 
+.img-lei-maria-da-penha, 
+.img-proj-borboleta, 
+.img-inst-mariadapenha, 
+.img-rio-em-redes {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 20px auto;
 }
 
 
-.logo{
-  color:rgb(250, 249, 249);
+/* ==========================================================================
+   4. MEDIA QUERIES (O sensor que ativa o visual de Computador)
+   ========================================================================== */
+@media (min-width: 768px) {
+    header {
+        padding: 15px 40px; /* Volta com seu espaçamento original no PC */
+    }
+
+    nav {
+        flex-direction: row; /* Coloca logo na esquerda e links na direita */
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Retorna com os seus tamanhos de letras originais para telas grandes */
+    h1 {
+        font-size: 50px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    /* Aqui o parágrafo cresce para 20px apenas no computador */
+    p, li, .nav-links a {
+        font-size: 20px;
+    }
+
+    /* Amplia o espaçamento entre as seções no computador conforme seu projeto original */
+    section {
+        margin: 80px 0;
+        scroll-margin-top: 90px;
+    }
 }
 
-.nav-links{
-  list-style:none;
-  display: flex;
-  gap:20px;
-}
-
-.nav-links a{
-  text-decoration:none;
-  color:white;
-  font-weight:bold;
-  transition:0.3s;
-  font-size: 20px;
-}
-
-.nav-links a:hover{
-  color:#C0392B;
-}
-
-
-.img-principal {
-  display: flex;
-  justify-content: center;
-  width: 1000px;
-  margin: auto;
-  padding: 30px;
-}
-
-.img-lei-maria-da-penha{
-  display: flex;
-  justify-content: center;
-
-}
-
-.img-proj-borboleta{
-  display: flex;
-  justify-content: center;
-  
-}
-
-.img-inst-mariadapenha{
-  display: flex;
-  justify-content: center;
-  
-}
-
-.img-rio-em-redes{
-  display: block;
-  justify-content: center;
-  
+/* ==========================================================================
+   5. RODAPÉ (FOOTER)
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #111; /* Fundo combinando com o Header */
+    color: #888;
+    margin-top: 50px;
+    font-size: 14px;
 }
